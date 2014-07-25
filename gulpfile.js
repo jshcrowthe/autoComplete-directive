@@ -39,7 +39,7 @@ gulp.task('test', function() {
       action: 'run'
     })
     .on('error', function(err) {
-      return console.error(err);
+      throw err;
     }));
 });
 
