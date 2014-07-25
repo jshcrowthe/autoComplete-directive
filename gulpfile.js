@@ -4,6 +4,7 @@ var concat = require('gulp-concat');
 var watch = require('gulp-watch');
 var uglify = require('gulp-uglify');
 var closure = require('gulp-jquery-closure');
+var bower = require('gulp-bower');
 
 var testFiles = [
   'bower_components/angular/*.js',
@@ -16,6 +17,11 @@ var projectFiles = [
   'test/*.js',
   'autoComplete/*.js',
 ];
+
+gulp.task('bower', function() {
+  return bower()
+    .pipe(gulp.dest('./'));
+});
 
 gulp.task('build', function() {
   return gulp.src(['./autoComplete/*.js', '!./autoComplete/autoComplete.js'])

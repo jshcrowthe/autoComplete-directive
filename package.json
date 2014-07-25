@@ -12,6 +12,7 @@
   "dependencies": {
     "chai": "^1.9.1",
     "gulp": "^3.8.6",
+    "gulp-bower": "0.0.6",
     "gulp-concat": "^2.3.4",
     "gulp-jquery-closure": "^1.1.1",
     "gulp-karma": "^0.0.4",
@@ -26,7 +27,7 @@
     "node-karma-wrapper": "^0.2.2"
   },
   "scripts": {
-    "test": "gulp build && gulp test"
+    "test": "gulp bower && gulp build && gulp test"
   },
   "repository": {
     "type": "git",
