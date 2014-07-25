@@ -6,11 +6,9 @@ This is an Angular Directive for FamilySearch's name and place standards. Curren
 To use this directive simply apply a data-auto-complete to an input tag that you wish to use date and place standards on. (NOTE: This directive REQUIRES that the input have a ng-model attribute!):
 
 Won't work:
-'''HTML
-<input data-auto-complete>
-'''
+
+    <input data-auto-complete>
 
 Will work:
-'''HTML
-<input data-ng-model="test" data-auto-complete>
-'''
+
+    <input data-ng-model="test" data-auto-complete>
