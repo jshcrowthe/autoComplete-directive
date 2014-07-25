@@ -70,7 +70,7 @@ gulp.task('testMin', function() {
     }));
 });
 
-gulp.task('default', ['build', 'testRaw', 'minify', 'testMin'], function() {
+gulp.task('default', function() {
   try {
     gulp.watch(projectFiles, ['build']);
     gulp.watch('./autoComplete/autoComplete.js', ['testRaw']);
