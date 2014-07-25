@@ -1,5 +1,5 @@
 /* global angular, FS */
-angular.module('fsAutoComplete-directive', ['autoComplete-service'])
+angular.module('fsAutoComplete-directive', ['fsAutoComplete-service'])
 .directive('autoComplete', ['autoCompleteService', function($autoCompleteService) {
   if (typeof FS === 'object' && typeof FS.File === 'object' && typeof FS.File.loadCSS === 'function') FS.File.loadCSS('jquery.autocomplete-1.10.4.css');
   /**
