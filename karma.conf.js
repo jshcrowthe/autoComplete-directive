@@ -24,7 +24,7 @@ module.exports = function(config) {
     ],
 
     // list of files / patterns to exclude
-    exclude: ['**/*.min.*'],
+    exclude: ['bower_components/**/*.min.*'],
 
     // web server port
     port: 8080,

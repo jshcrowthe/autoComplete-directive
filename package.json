@@ -16,6 +16,7 @@
     "gulp-concat": "^2.3.4",
     "gulp-jquery-closure": "^1.1.1",
     "gulp-karma": "^0.0.4",
+    "gulp-rename": "^1.2.0",
     "gulp-uglify": "^0.3.1",
     "gulp-watch": "^0.6.8",
     "karma": "^0.12.17",
@@ -27,7 +28,7 @@
     "node-karma-wrapper": "^0.2.2"
   },
   "scripts": {
-    "test": "gulp bower && gulp build && gulp test"
+    "test": "gulp bower && gulp build && gulp testRaw && gulp minify && gulp testMin"
   },
   "repository": {
     "type": "git",
