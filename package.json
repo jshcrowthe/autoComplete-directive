@@ -6,20 +6,27 @@
   "directories": {
     "test": "test"
   },
-  "devDependencies": {
+  "engines": {
+    "node": "v0.10.x"
+  },
+  "dependencies": {
     "chai": "^1.9.1",
-    "gulp": "latest",
-    "gulp-karma": "latest",
+    "gulp": "^3.8.6",
+    "gulp-concat": "^2.3.4",
+    "gulp-jquery-closure": "^1.1.1",
+    "gulp-karma": "^0.0.4",
+    "gulp-uglify": "^0.3.1",
+    "gulp-watch": "^0.6.8",
     "karma": "^0.12.17",
     "karma-chai": "^0.1.0",
     "karma-mocha": "^0.1.6",
-    "karma-mocha-reporter": "latest",
+    "karma-mocha-reporter": "^0.2.8",
     "karma-phantomjs-launcher": "^0.1.4",
     "mocha": "^1.20.1",
     "node-karma-wrapper": "^0.2.2"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "gulp build && gulp test"
   },
   "repository": {
     "type": "git",
