@@ -11,19 +11,19 @@ var rawTestFiles = [
   'bower_components/angular/*.js',
   'bower_components/angular-mocks/*.js',
   'test/*.js',
-  'autoComplete/autoComplete.js'
+  'dist/autoComplete.js'
 ];
 
 var minTestFiles = [
   'bower_components/angular/*.js',
   'bower_components/angular-mocks/*.js',
   'test/*.js',
-  'autoComplete/autoComplete.min.js'
+  'dist/autoComplete.min.js'
 ];
 
 var projectFiles = [
   'test/*.js',
-  'autoComplete/*.js',
+  'source/*.js',
 ];
 
 gulp.task('bower', function() {
@@ -32,19 +32,19 @@ gulp.task('bower', function() {
 });
 
 gulp.task('build', function() {
-  return gulp.src(['./autoComplete/*.js', '!./autoComplete/autoComplete.*'])
+  return gulp.src(['./source/*.js'])
           .pipe(concat('autoComplete.js'))
           .pipe(closure({$: false, angular: true}))
-          .pipe(gulp.dest('./autoComplete'));
+          .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('minify', function() {
-  return gulp.src('./autoComplete/autoComplete.js')
+  return gulp.src('./dist/autoComplete.js')
           .pipe(uglify())
           .pipe(rename(function(path) {
             path.extname = '.min' + path.extname;
           }))
-          .pipe(gulp.dest('./autoComplete'));
+          .pipe(gulp.dest('./dist'));
 });
 
 
@@ -73,9 +73,9 @@ gulp.task('testMin', function() {
 gulp.task('default', function() {
   try {
     gulp.watch(projectFiles, ['build']);
-    gulp.watch('./autoComplete/autoComplete.js', ['testRaw']);
-    gulp.watch('./autoComplete/autoComplete.js', ['minify']);
-    gulp.watch('./autoComplete/autoComplete.js', ['testMin']);
+    gulp.watch('./dist/*.js', ['testRaw']);
+    gulp.watch('./dist/*.js', ['minify']);
+    gulp.watch('./dist/*.min.js', ['testMin']);
   } catch(e) {
     return console.error(e);
   }
