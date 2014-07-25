@@ -20,7 +20,7 @@ var projectFiles = [
 
 gulp.task('bower', function() {
   return bower()
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest('./bower_components'));
 });
 
 gulp.task('build', function() {
