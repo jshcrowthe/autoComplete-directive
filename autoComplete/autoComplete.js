@@ -1,7 +1,7 @@
 ;(function (angular) {
 /* global angular, FS */
-var app = angular.module('autoComplete-directive', ['autoComplete-service']);
-app.directive('autoComplete', ['autoCompleteService', function($autoCompleteService) {
+angular.module('autoComplete-directive', ['autoComplete-service'])
+.directive('autoComplete', ['autoCompleteService', function($autoCompleteService) {
   if (typeof FS === 'object' && typeof FS.File === 'object' && typeof FS.File.loadCSS === 'function') FS.File.loadCSS('jquery.autocomplete-1.10.4.css');
   /**
    * Auto Complete Directive. This directive is to be put on an input tag and will 
@@ -52,8 +52,8 @@ app.directive('autoComplete', ['autoCompleteService', function($autoCompleteServ
 angular.module('autoComplete', ['autoComplete-directive']);
 
 /* global angular, window, FS */
-var app = angular.module('autoComplete-service', []);
-app.service('autoCompleteService', ['$http', '$q', function($http, $q) {
+angular.module('autoComplete-service', [])
+.service('autoCompleteService', ['$http', '$q', function($http, $q) {
   this.getSuggestions = function(viewValue, standardType) {
     var dfd = $q.defer();
     var API_URL;
@@ -132,5 +132,4 @@ app.service('autoCompleteService', ['$http', '$q', function($http, $q) {
   };
 }]);
 
-!function(e){var t=e.module("autoComplete-directive",["autoComplete-service"]);t.directive("autoComplete",["autoCompleteService",function(e){function t(t,o,n,a){a.$parsers.unshift(function(a){return console.log("viewValue:",a),o.autocomplete({source:function(t,o){return e.getSuggestions(a,n.autoComplete||"date").then(function(e){return o(e)})},select:function(e,o){return t.value=o.item.value,"function"==typeof t.onselect&&t.onselect({value:o.item.value}),o.item.value},minLength:2}),a})}return"object"==typeof FS&&"object"==typeof FS.File&&"function"==typeof FS.File.loadCSS&&FS.File.loadCSS("jquery.autocomplete-1.10.4.css"),{restrict:"A",scope:{value:"=ngModel",onselect:"&"},replace:!1,require:"ngModel",link:t}}]),e.module("autoComplete",["autoComplete-directive"]);var t=e.module("autoComplete-service",[]);t.service("autoCompleteService",["$http","$q",function(e,t){this.getSuggestions=function(o,n){function a(e){return e?Array.isArray(e.normalized)?e.normalized[0]:e.normalized:null}function i(e){return!!e}var l,r=t.defer();l=window.location.host.split(".")[0].indexOf("beta")>-1||window.location.host.split(".")[0].indexOf("localhost")>-1?"https://apibeta.familysearch.org/authorities/v1/":"https://api.familysearch.org/authorities/v1/";var s,u={de:"Keine der oben genannten",en:"None of the Above",es:"Ninguna de las anteriores",fr:"Aucune de ces réponses",it:"Nessuno dei precedenti",pt:"Nenhuma das opções acima",ru:"Ни один из вышеперечисленного",ja:"上記のどれでもない",ko:"해당 사항 없음",zh:"以上都不是"},c=FS.Cookie.getCookie("fssessionid");"date"===n?s=l+'date?date="'+o+'"':"place"===n?s=l+'place?place="'+o+'"&view=simple&filter=true':"name"===n&&(s=l+'name?name="'+o+'"'),s+="&sessionId="+c,s+="&locale="+FS.simpleLocale();var p=[];return e({url:s,method:"GET",headers:{"Content-Type":"application/json"},data:{}}).success(function(e){return"date"===n?e.dates&&0!==e.dates.count?(p=e.dates.date.map(a).filter(i),p.push(u[FS.simpleLocale()]),r.resolve(p)):r.resolve([]):"place"===n?e.places&&0!==e.places.count?(p=e.places.place.map(a).filter(i),p.push(u[FS.simpleLocale()]),r.resolve(p)):r.resolve([]):void 0}).error(function(e){r.reject(e)}),r.promise}}])}(angular);
 })(angular);

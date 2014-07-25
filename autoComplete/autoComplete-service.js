@@ -1,6 +1,6 @@
 /* global angular, window, FS */
-var app = angular.module('autoComplete-service', []);
-app.service('autoCompleteService', ['$http', '$q', function($http, $q) {
+angular.module('autoComplete-service', [])
+.service('autoCompleteService', ['$http', '$q', function($http, $q) {
   this.getSuggestions = function(viewValue, standardType) {
     var dfd = $q.defer();
     var API_URL;

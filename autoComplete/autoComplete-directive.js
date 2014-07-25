@@ -1,6 +1,6 @@
 /* global angular, FS */
-var app = angular.module('autoComplete-directive', ['autoComplete-service']);
-app.directive('autoComplete', ['autoCompleteService', function($autoCompleteService) {
+angular.module('autoComplete-directive', ['autoComplete-service'])
+.directive('autoComplete', ['autoCompleteService', function($autoCompleteService) {
   if (typeof FS === 'object' && typeof FS.File === 'object' && typeof FS.File.loadCSS === 'function') FS.File.loadCSS('jquery.autocomplete-1.10.4.css');
   /**
    * Auto Complete Directive. This directive is to be put on an input tag and will 

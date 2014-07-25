@@ -32,7 +32,7 @@ gulp.task('bower', function() {
 });
 
 gulp.task('build', function() {
-  return gulp.src(['./autoComplete/*.js', '!./autoComplete/autoComplete.js'])
+  return gulp.src(['./autoComplete/*.js', '!./autoComplete/autoComplete.*'])
           .pipe(concat('autoComplete.js'))
           .pipe(closure({$: false, angular: true}))
           .pipe(gulp.dest('./autoComplete'));
