@@ -1,5 +1,5 @@
 /* global angular, window, FS */
-angular.module('autoComplete-service', [])
+angular.module('fsAutoComplete-service', [])
 .service('autoCompleteService', ['$http', '$q', function($http, $q) {
   this.getSuggestions = function(viewValue, standardType) {
     var dfd = $q.defer();

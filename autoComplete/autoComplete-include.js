@@ -1,2 +1,2 @@
 /* global angular */
-angular.module('autoComplete', ['autoComplete-directive']);
+angular.module('fsAutoComplete', ['fsAutoComplete-directive']);

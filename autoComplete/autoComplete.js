@@ -1,6 +1,6 @@
 ;(function (angular) {
 /* global angular, FS */
-angular.module('autoComplete-directive', ['autoComplete-service'])
+angular.module('fsAutoComplete-directive', ['autoComplete-service'])
 .directive('autoComplete', ['autoCompleteService', function($autoCompleteService) {
   if (typeof FS === 'object' && typeof FS.File === 'object' && typeof FS.File.loadCSS === 'function') FS.File.loadCSS('jquery.autocomplete-1.10.4.css');
   /**
@@ -49,10 +49,10 @@ angular.module('autoComplete-directive', ['autoComplete-service'])
   };
 }]);
 /* global angular */
-angular.module('autoComplete', ['autoComplete-directive']);
+angular.module('fsAutoComplete', ['fsAutoComplete-directive']);
 
 /* global angular, window, FS */
-angular.module('autoComplete-service', [])
+angular.module('fsAutoComplete-service', [])
 .service('autoCompleteService', ['$http', '$q', function($http, $q) {
   this.getSuggestions = function(viewValue, standardType) {
     var dfd = $q.defer();

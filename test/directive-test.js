@@ -1,6 +1,6 @@
 // Tests for autoComplete directive
 
-beforeEach(module('autoComplete'));
+beforeEach(module('fsAutoComplete'));
 beforeEach(inject(function($compile, $rootScope) {
   $scope = $rootScope;
   element = angular.element('<input data-ng-model="testModel" data-auto-complete>');
