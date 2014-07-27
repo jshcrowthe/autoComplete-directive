@@ -3,7 +3,7 @@ var karma = require('gulp-karma');
 var concat = require('gulp-concat');
 var watch = require('gulp-watch');
 var uglify = require('gulp-uglify');
-var closure = require('gulp-jquery-closure');
+var closure = require('gulp-jsclosure');
 var bower = require('gulp-bower');
 var rename = require('gulp-rename');
 
@@ -34,7 +34,7 @@ gulp.task('bower', function() {
 gulp.task('build', function() {
   return gulp.src(['./source/*.js'])
           .pipe(concat('autoComplete.js'))
-          .pipe(closure({$: false, angular: true}))
+          .pipe(closure(['angular']))
           .pipe(gulp.dest('./dist'));
 });
 

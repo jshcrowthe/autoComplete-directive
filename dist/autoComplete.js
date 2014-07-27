@@ -1,4 +1,4 @@
-;(function (angular) {
+;(function(angular) {
 /* global angular, FS */
 angular.module('fsAutoComplete-directive', ['fsAutoComplete-service'])
 .directive('autoComplete', ['autoCompleteService', function($autoCompleteService) {
