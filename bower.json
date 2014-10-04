@@ -16,6 +16,8 @@
   "private": true,
   "devDependencies": {
     "angular": "~1.2.20",
-    "angular-mocks": "~1.2.20"
+    "angular-mocks": "~1.2.20",
+    "jquery":"~1.x",
+    "jquery-ui":"~1.x"
   }
 }

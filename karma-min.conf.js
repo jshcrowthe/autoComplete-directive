@@ -22,7 +22,7 @@ module.exports = function(config) {
       './bower_components/jquery-ui/jquery-ui.js',
       './bower_components/angular/angular.js',
       './bower_components/angular-*/*.js',
-      './dist/ngComplete.js',
+      './dist/ngComplete.min.js',
       './test/*.js'
     ],
 

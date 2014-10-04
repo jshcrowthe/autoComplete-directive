@@ -28,7 +28,7 @@
     "node-karma-wrapper": "^0.2.2"
   },
   "scripts": {
-    "test": "gulp bower && gulp build && gulp testRaw && gulp minify && gulp testMin"
+    "test": "gulp bower && gulp build && gulp test-run && gulp minify && gulp test-run-min"
   },
   "repository": {
     "type": "git",
@@ -39,5 +39,8 @@
   "bugs": {
     "url": "https://github.com/jshcrowthe/autoComplete-directive/issues"
   },
-  "homepage": "https://github.com/jshcrowthe/autoComplete-directive"
+  "homepage": "https://github.com/jshcrowthe/autoComplete-directive",
+  "devDependencies": {
+    "karma": "^0.12.24"
+  }
 }
